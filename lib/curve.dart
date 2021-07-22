@@ -27,5 +27,4 @@ class Curve {
 
   /// Division operator.
   Curve operator /(double operand) => Curve(point1 * operand, handle1 * operand, handle2 * operand, point2 * operand);
-
 }
