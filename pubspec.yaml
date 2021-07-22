@@ -1,6 +1,7 @@
 name: curve
 description: A simple command-line application.
 version: 1.0.0
+repository: https://github.com/bjartebore/curve
 
 environment:
   sdk: '>=2.13.0 <3.0.0'
