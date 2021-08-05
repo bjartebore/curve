@@ -26,6 +26,12 @@ class QuadraticCurve implements Line {
   @override
   Point<double> point2;
 
+  QuadraticCurve round() => QuadraticCurve(
+        point1.round(),
+        handle1.round(),
+        point2.round(),
+      );
+
   /// Multiplication operator.
   QuadraticCurve operator *(double operand) => QuadraticCurve(point1 * operand, handle1 * operand, point2 * operand);
 
@@ -91,6 +97,13 @@ class CubicCurve implements Line {
     ]);
   }
 
+  CubicCurve round() => CubicCurve(
+        point1.round(),
+        handle1.round(),
+        handle2.round(),
+        point2.round(),
+      );
+
   /// Multiplication operator.
   CubicCurve operator *(double operand) =>
       CubicCurve(point1 * operand, handle1 * operand, handle2 * operand, point2 * operand);
@@ -98,4 +111,8 @@ class CubicCurve implements Line {
   /// Division operator.
   CubicCurve operator /(double operand) =>
       CubicCurve(point1 * operand, handle1 * operand, handle2 * operand, point2 * operand);
+}
+
+extension _ExtendedPoint on Point<double> {
+  Point<double> round() => Point(x.roundToDouble(), y.roundToDouble());
 }
